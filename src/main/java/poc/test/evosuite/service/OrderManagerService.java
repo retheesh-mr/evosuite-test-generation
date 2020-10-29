@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface OrderManagerService {
 
-    Order createOrder(List<OrderItem> orderItemList);
+    Order createOrder(List<OrderItem> orderItemList, String orderName);
     boolean deleteOrder(Order order);
     boolean addNewItemToExistingOrder(OrderItem orderItem);
     boolean removeItemFromOrder(OrderItem orderItem);
