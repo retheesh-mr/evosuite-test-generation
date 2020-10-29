@@ -2,14 +2,21 @@ package poc.test.evosuite.model;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Order {
 
-    private long orderId;
+    private String orderId;
     private List<OrderItem> orderItemList;
     private String orderName;
     private double totalPrice;
     private Date orderCreationDate;
+
+    public Order(String orderId, String orderName, Date orderCreationDate) {
+        this.orderId = orderId;
+        this.orderName = orderName;
+        this.orderCreationDate = orderCreationDate;
+    }
 
     public List<OrderItem> getOrderItemList() {
         return orderItemList;
@@ -43,11 +50,11 @@ public class Order {
         this.orderName = orderName;
     }
 
-    public long getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(long orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 }
