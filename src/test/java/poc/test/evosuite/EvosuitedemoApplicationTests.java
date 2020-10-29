@@ -6,7 +6,9 @@ import org.junit.runner.RunWith;
 import org.mockito.internal.matchers.Or;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 import poc.test.evosuite.model.OrderItem;
+import poc.test.evosuite.repository.OrderRepository;
 import poc.test.evosuite.service.impl.OrderManagerServiceImpl;
 
 import java.util.ArrayList;
@@ -27,11 +29,13 @@ public class EvosuitedemoApplicationTests {
 	public void createNewOrderShouldReturnOrder() {
 
 		OrderManagerServiceImpl orderManagerService = new OrderManagerServiceImpl();
+		OrderRepository orderRepository = new OrderRepository();
+		ReflectionTestUtils.setField(orderManagerService, "orderRepository", orderRepository);
 
 		List<OrderItem> orderItems = new ArrayList<>();
 
 		String itemId = UUID.randomUUID().toString();
-		Date creationDate = new Date("dd/MM/yyyy HH:mm:ss");
+		Date creationDate = new Date();
 		orderItems.add(new OrderItem(itemId, 10, "TestName",creationDate));
 
 		String itemId2 = UUID.randomUUID().toString();

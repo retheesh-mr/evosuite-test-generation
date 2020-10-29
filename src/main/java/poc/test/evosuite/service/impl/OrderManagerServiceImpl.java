@@ -24,7 +24,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
         List<Order> orderList = orderRepository.getCreatedOrderList();
 
         String orderId = UUID.randomUUID().toString();
-        Date creationDate = new Date("dd/MM/yyyy HH:mm:ss");
+        Date creationDate = new Date();
 
         Order order = new Order (orderId, orderName, creationDate);
         order.setOrderItemList(orderItemList);
