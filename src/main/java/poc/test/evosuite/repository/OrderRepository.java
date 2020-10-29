@@ -32,12 +32,14 @@ public class OrderRepository {
     }
 
     public void updateOrderInCreatedOrderList(Order order) {
-        createdOrderList.removeIf(order1 -> order1.getOrderId().equals(order.getOrderId()));
+        createdOrderList.removeIf(
+                order1 -> order1.getOrderId().equals(order.getOrderId()));
         createdOrderList.add(order);
     }
 
     public boolean removeOrderFromCreatedOrderList(Order order){
-        return createdOrderList.removeIf(order1 -> order1.getOrderId().equals(order.getOrderId()));
+        return createdOrderList.removeIf(
+                order1 -> order1.getOrderId().equals(order.getOrderId()));
     }
 
     public void addOrderToCreatedOrderList(Order order){

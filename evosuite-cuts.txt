@@ -1,1 +1,1 @@
-poc.test.evosuite.service.impl.OrderManagerServiceImpl, poc.test.evosuite.repository.OrderRepository
+poc.test.evosuite.service.impl.OrderManagerServiceImpl, poc.test.evosuite.repository.OrderRepository, poc.test.evosuite.model.Order, poc.test.evosuite.model.OrderItem
