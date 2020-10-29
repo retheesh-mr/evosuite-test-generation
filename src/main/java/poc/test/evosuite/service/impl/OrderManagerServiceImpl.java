@@ -94,6 +94,12 @@ public class OrderManagerServiceImpl implements OrderManagerService {
         List<Order> orderList = orderRepository.getCreatedOrderList();
         Order currentOrder = null;
 
+        for (Order order:orderList) {
+            if (order.getOrderId() == orderId){
+
+            }
+        }
+
         if (currentOrder != null) {
 
             orderRepository.getCreatedOrderList().remove(currentOrder);
@@ -106,7 +112,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
             return false;
 
         }
-    }
 
+    }
 
 }
