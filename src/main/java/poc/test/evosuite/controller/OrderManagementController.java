@@ -21,7 +21,7 @@ public class OrderManagementController {
 
     @PostMapping(value="/createOrder")
     public @ResponseBody Order createOrder(@RequestBody List<OrderItem> orderItems){
-        return orderManagerService.createOrder(orderItems);
+        return orderManagerService.createOrder(orderItems, "");
     }
 
     @PostMapping(value="/deleteOrder")
@@ -31,11 +31,11 @@ public class OrderManagementController {
 
     @PostMapping(value="/addNewItem")
     public @ResponseBody boolean addNewItem(@RequestBody OrderItem orderItem){
-        return orderManagerService.addNewItemToExistingOrder(orderItem);
+        return orderManagerService.addNewItemToExistingOrder(orderItem, String.valueOf(orderItem.getItemId()));
     }
 
     @PostMapping(value="/deleteItem")
     public @ResponseBody boolean deleteItem(@RequestBody OrderItem orderItem){
-        return orderManagerService.removeItemFromOrder(orderItem);
+        return orderManagerService.removeItemFromOrder(orderItem, String.valueOf(orderItem.getItemId()));
     }
 }
