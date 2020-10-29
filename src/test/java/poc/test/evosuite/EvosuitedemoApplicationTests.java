@@ -1,4 +1,4 @@
-package com.telenet.evosuite;
+package poc.test.evosuite;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

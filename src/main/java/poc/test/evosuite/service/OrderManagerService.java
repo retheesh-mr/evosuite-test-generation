@@ -1,7 +1,7 @@
-package com.telenet.evosuite.service;
+package poc.test.evosuite.service;
 
-import com.telenet.evosuite.model.Order;
-import com.telenet.evosuite.model.OrderItem;
+import poc.test.evosuite.model.Order;
+import poc.test.evosuite.model.OrderItem;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
-package com.telenet.evosuite.controller;
+package poc.test.evosuite.controller;
 
-import com.telenet.evosuite.model.Order;
-import com.telenet.evosuite.model.OrderItem;
-import com.telenet.evosuite.service.OrderManagerService;
+import poc.test.evosuite.model.Order;
+import poc.test.evosuite.model.OrderItem;
+import poc.test.evosuite.service.OrderManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

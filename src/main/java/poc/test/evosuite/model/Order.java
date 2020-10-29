@@ -1,4 +1,4 @@
-package com.telenet.evosuite.model;
+package poc.test.evosuite.model;
 
 import java.util.Date;
 import java.util.List;
