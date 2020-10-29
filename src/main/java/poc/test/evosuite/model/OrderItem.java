@@ -4,10 +4,17 @@ import java.util.Date;
 
 public class OrderItem {
 
-    private long itemId;
+    private String itemId;
     private double price;
-    private double itemName;
+    private String itemName;
     private Date orderCreatedDate;
+
+    public OrderItem(String itemId, double price, String itemName, Date orderCreatedDate) {
+        this.itemId = itemId;
+        this.price = price;
+        this.itemName = itemName;
+        this.orderCreatedDate = orderCreatedDate;
+    }
 
     public double getPrice() {
         return price;
@@ -17,11 +24,11 @@ public class OrderItem {
         this.price = price;
     }
 
-    public double getItemName() {
+    public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(double itemName) {
+    public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
@@ -33,11 +40,11 @@ public class OrderItem {
         this.orderCreatedDate = orderCreatedDate;
     }
 
-    public long getItemId() {
+    public String getItemId() {
         return itemId;
     }
 
-    public void setItemId(long itemId) {
+    public void setItemId(String itemId) {
         this.itemId = itemId;
     }
 }

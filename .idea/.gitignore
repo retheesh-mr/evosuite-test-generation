@@ -1,3 +1,13 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/libraries/
+/.gitignore
+/.name
+/compiler.xml
+/encodings.xml
+/jarRepositories.xml
+/misc.xml
+/modules.xml
+/vcs.xml
+/workspace.xml

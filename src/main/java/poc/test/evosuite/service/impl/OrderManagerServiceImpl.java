@@ -41,7 +41,19 @@ public class OrderManagerServiceImpl implements OrderManagerService {
 
     @Override
     public boolean deleteOrder(Order order) {
-        return false;
+
+        List<Order> submittedOrderList = orderRepository.getSubmittedOrderList();
+
+        for (Order submittedOrder:submittedOrderList) {
+            if (order ==submittedOrder){
+                //todo return message can't delete submitted order
+                return false;
+            }
+        }
+
+        orderRepository.getCreatedOrderList().remove(order);
+        return true;
+
     }
 
     @Override
