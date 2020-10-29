@@ -6,7 +6,7 @@ public class OrderItem {
 
     private long itemId;
     private double price;
-    private double itemName;
+    private String itemName;
     private Date orderCreatedDate;
 
     public double getPrice() {
@@ -17,11 +17,11 @@ public class OrderItem {
         this.price = price;
     }
 
-    public double getItemName() {
+    public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(double itemName) {
+    public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
