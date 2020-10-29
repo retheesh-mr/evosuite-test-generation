@@ -1,5 +1,6 @@
 package poc.test.evosuite.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -7,7 +8,7 @@ import java.util.UUID;
 public class Order {
 
     private String orderId;
-    private List<OrderItem> orderItemList;
+    private List<OrderItem> orderItemList = new ArrayList<>();
     private String orderName;
     private double totalPrice;
     private Date orderCreationDate;
