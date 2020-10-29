@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import poc.test.evosuite.model.Order;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Repository
@@ -41,16 +42,24 @@ public class OrderRepository {
     }
 
     public void updateOrderInCreatedOrderList(Order order){
-
-
-
-
+        Iterator<Order> orderIterator = createdOrderList.iterator();
+        while (orderIterator.hasNext()) {
+            Order order1 = orderIterator.next();
+            if(order1.getOrderId() == order.getOrderId()){
+                orderIterator.remove();
+            }
+        }
+        createdOrderList.add(order);
     }
 
     public void removeOrderFromCreatedOrderList(Order order){
-
-        createdOrderList.remove(order);
-
+        Iterator<Order> orderIterator = createdOrderList.iterator();
+        while (orderIterator.hasNext()) {
+            Order order1 = orderIterator.next();
+            if(order1.getOrderId() == order.getOrderId()){
+                orderIterator.remove();
+            }
+        }
     }
 
     public void addOrderToCreatedOrderList(Order order){

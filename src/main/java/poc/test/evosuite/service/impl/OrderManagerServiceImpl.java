@@ -37,7 +37,6 @@ public class OrderManagerServiceImpl implements OrderManagerService {
 
     @Override
     public boolean deleteOrder(Order order) {
-
         orderRepository.removeOrderFromCreatedOrderList(order);
         return true;
 
