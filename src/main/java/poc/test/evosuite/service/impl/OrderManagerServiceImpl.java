@@ -21,7 +21,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
     @Override
     public Order createOrder(List<OrderItem> orderItemList, String orderName) {
 
-        List<Order> orderList = orderRepository.getCreatedOrderList();
+        //List<Order> orderList = orderRepository.getCreatedOrderList();
 
         String orderId = UUID.randomUUID().toString();
         Date creationDate = new Date();
@@ -33,7 +33,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
             order.setTotalPrice(order.getTotalPrice() + orderItem.getPrice());
         }
 
-        orderList.add(order);
+        orderRepository.addOrderFromCreatedOrderList(order);
 
         return order;
 

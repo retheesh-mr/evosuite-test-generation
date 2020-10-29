@@ -47,9 +47,7 @@ public class EvosuitedemoApplicationTests {
 		String orderId = UUID.randomUUID().toString();
 		orderManagerService.createOrder(orderItems,"OrderName");
 
-
 		Assert.assertEquals(1,1);
-
 
 
 	}

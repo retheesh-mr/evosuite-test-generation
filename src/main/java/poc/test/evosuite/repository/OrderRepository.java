@@ -27,4 +27,28 @@ public class OrderRepository {
     public void setSubmittedOrderList(List<Order> submittedOrderList) {
         this.submittedOrderList = submittedOrderList;
     }
+
+    public void removeOrderFromCreatedOrderList(Order order){
+
+        createdOrderList.remove(order);
+
+    }
+
+    public void addOrderFromCreatedOrderList(Order order){
+
+        createdOrderList.add(order);
+
+    }
+
+    public void removeOrderFromSubmittedOrderList(Order order){
+
+        submittedOrderList.remove(order);
+
+    }
+
+    public void addOrderFromSubmittedOrderList(Order order){
+
+        submittedOrderList.add(order);
+
+    }
 }
