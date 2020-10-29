@@ -28,13 +28,32 @@ public class OrderRepository {
         this.submittedOrderList = submittedOrderList;
     }
 
+    public Order getOrderFromCreatedOrderList(String orderId){
+
+        for (Order order:createdOrderList) {
+            if (order.getOrderId() == orderId){
+                return order;
+            }
+        }
+
+        return null;
+
+    }
+
+    public void updateOrderInCreatedOrderList(Order order){
+
+
+
+
+    }
+
     public void removeOrderFromCreatedOrderList(Order order){
 
         createdOrderList.remove(order);
 
     }
 
-    public void addOrderFromCreatedOrderList(Order order){
+    public void addOrderToCreatedOrderList(Order order){
 
         createdOrderList.add(order);
 
@@ -46,7 +65,7 @@ public class OrderRepository {
 
     }
 
-    public void addOrderFromSubmittedOrderList(Order order){
+    public void addOrderToSubmittedOrderList(Order order){
 
         submittedOrderList.add(order);
 
