@@ -6,13 +6,13 @@ import java.util.UUID;
 
 public class Order {
 
-    private UUID orderId;
+    private String orderId;
     private List<OrderItem> orderItemList;
     private String orderName;
     private double totalPrice;
     private Date orderCreationDate;
 
-    public Order(UUID orderId, String orderName, Date orderCreationDate) {
+    public Order(String orderId, String orderName, Date orderCreationDate) {
         this.orderId = orderId;
         this.orderName = orderName;
         this.orderCreationDate = orderCreationDate;
@@ -50,11 +50,11 @@ public class Order {
         this.orderName = orderName;
     }
 
-    public UUID getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 
-    public void setOrderId(UUID orderId) {
+    public void setOrderId(String orderId) {
         this.orderId = orderId;
     }
 }

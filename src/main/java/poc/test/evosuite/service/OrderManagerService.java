@@ -9,6 +9,8 @@ public interface OrderManagerService {
 
     Order createOrder(List<OrderItem> orderItemList, String orderName);
     boolean deleteOrder(Order order);
-    boolean addNewItemToExistingOrder(OrderItem orderItem);
-    boolean removeItemFromOrder(OrderItem orderItem);
+    boolean addNewItemToExistingOrder(OrderItem orderItem, String orderId);
+    boolean removeItemFromOrder(OrderItem orderItem, String orderId);
+    boolean submitOrder(String orderId);
+
 }

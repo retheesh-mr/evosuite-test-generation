@@ -23,7 +23,7 @@ public class OrderManagerServiceImpl implements OrderManagerService {
 
         List<Order> orderList = orderRepository.getCreatedOrderList();
 
-        UUID orderId = UUID.randomUUID();
+        String orderId = UUID.randomUUID().toString();
         Date creationDate = new Date("dd/MM/yyyy HH:mm:ss");
 
         Order order = new Order (orderId, orderName, creationDate);
@@ -45,12 +45,68 @@ public class OrderManagerServiceImpl implements OrderManagerService {
     }
 
     @Override
-    public boolean addNewItemToExistingOrder(OrderItem orderItem) {
+    public boolean addNewItemToExistingOrder(OrderItem orderItem, String orderId) {
+
+        List<Order> orderList = orderRepository.getCreatedOrderList();
+        Order currentOrder;
+
+        for (Order order:orderList) {
+            if (order.getOrderId() == orderId){
+
+                currentOrder = order;
+                orderRepository.getCreatedOrderList().remove(currentOrder);
+
+                currentOrder.getOrderItemList().add(orderItem);
+                orderRepository.getCreatedOrderList().add(currentOrder);
+
+                return true;
+            }
+        }
+
         return false;
     }
 
     @Override
-    public boolean removeItemFromOrder(OrderItem orderItem) {
+    public boolean removeItemFromOrder(OrderItem orderItem, String orderId) {
+
+        List<Order> orderList = orderRepository.getCreatedOrderList();
+        Order currentOrder;
+
+        for (Order order:orderList) {
+            if (order.getOrderId() == orderId){
+
+                currentOrder = order;
+                orderRepository.getCreatedOrderList().remove(currentOrder);
+
+                currentOrder.getOrderItemList().remove(orderItem);
+                orderRepository.getCreatedOrderList().add(currentOrder);
+
+                return true;
+            }
+        }
+
         return false;
     }
+
+    @Override
+    public boolean submitOrder(String orderId) {
+
+        List<Order> orderList = orderRepository.getCreatedOrderList();
+        Order currentOrder = null;
+
+        if (currentOrder != null) {
+
+            orderRepository.getCreatedOrderList().remove(currentOrder);
+            orderRepository.getSubmittedOrderList().add(currentOrder);
+
+            return true;
+
+        } else{
+
+            return false;
+
+        }
+    }
+
+
 }
